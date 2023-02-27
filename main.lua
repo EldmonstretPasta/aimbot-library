@@ -10,5 +10,7 @@ while configs.aimbot do
 		for i,v in pairs(game.Players:GetChildren()) do
 			camera.CFrame = CFrame.new(camera.CFrame.Position, v.Character.Head.Position)
 		end
+	else
+		return
 	end
 end
