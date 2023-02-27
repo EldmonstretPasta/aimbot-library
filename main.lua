@@ -5,7 +5,7 @@ local configs = {
 }
 
 while configs.aimbot do
-	if configs.aimbot then
+	if configs.aimbot == true then
 		task.wait()
 		for i,v in pairs(game.Players:GetChildren()) do
 			camera.CFrame = CFrame.new(camera.CFrame.Position, v.Character.Head.Position)
