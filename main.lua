@@ -1,16 +1,25 @@
 local camera = workspace.Camera
 
 local configs = {
-	aimbot = false,
+	outline = false,
+	outlinecolor = Color3.fromRGB(255, 255, 255)
 }
 
-while configs.aimbot do
-	if configs.aimbot == true then
-		task.wait()
-		for i,v in pairs(game.Players:GetChildren()) do
-			camera.CFrame = CFrame.new(camera.CFrame.Position, v.Character.Head.Position)
+while wait() do
+	for i,v in pairs(game.Players:GetPlayers()) do
+		while configs.outline do
+			local highlight = Instance.new("Highlight", v.Character)
+			if configs.outline == true then
+				task.wait()
+				highlight.Enabled = true
+				highlight.DepthMode = "AlwaysOnTop"
+				highlight.Name = "Outline"		
+				highlight.FillTransparency = 1
+				highlight.OutlineColor = configs.outlinecolor
+			else
+				highlight.Enabled = false
+				return
+			end
 		end
-	else
-		return
 	end
 end
