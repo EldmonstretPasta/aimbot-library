@@ -9,7 +9,6 @@ local camera = workspace.CurrentCamera
 
 --_G.Aimbot = false -- Check to see if user is holding down mouse buttons
 
-
 --_G.HitPart = "Head" -- Hitpart, basically where the aimbot locks
 
 --_G.AimKey = Enum.UserInputType.MouseButton2
