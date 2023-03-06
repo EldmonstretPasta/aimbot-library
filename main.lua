@@ -3,15 +3,12 @@ local runservice = game:GetService("RunService")
 local mouse = game.Players.LocalPlayer:GetMouse()
 local camera = workspace.CurrentCamera
 
-local chatevent = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
-
 -- If you use this for your script please credit me :D
 
 --_G.Enabled = true -- If this is enabled, the aimbot locks onto players
 
 --_G.Aimbot = false -- Check to see if user is holding down mouse buttons
 
--- _G.LockShout = false -- Types who you locked onto in chat
 
 --_G.HitPart = "Head" -- Hitpart, basically where the aimbot locks
 
@@ -48,8 +45,5 @@ end)
 runservice.RenderStepped:Connect(function() -- Aimbot loop
 	if _G.Enabled == true and _G.Aimbot == true then
 		camera.CFrame = CFrame.new(camera.CFrame.Position, getClosestPlayer().Character[_G.HitPart].Position)
-	end
-	if _G.Enabled == true and _G.Aimbot == true and _G.LockShout == true then
-		chatevent:FireServer("Locked onto: "..getClosestPlayer().Name, "All")
 	end
 end)
