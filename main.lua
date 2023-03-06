@@ -48,8 +48,8 @@ end)
 runservice.RenderStepped:Connect(function() -- Aimbot loop
 	if _G.Enabled == true and _G.Aimbot == true then
 		camera.CFrame = CFrame.new(camera.CFrame.Position, getClosestPlayer().Character[_G.HitPart].Position)
-	elseif _G.LockShout == true and _G.Enabled == true and _G.Aimbot == true then
-		camera.CFrame = CFrame.new(camera.CFrame.Position, getClosestPlayer().Character[_G.HitPart].Position)
-		chatevent:FireServer("Locked onto: ".. getClosestPlayer().Name, "All")
+	end
+	if _G.Enabled == true and _G.Aimbot == true and _G.LockShout == true then
+		chatevent:FireServer("Locked onto: "..getClosestPlayer().Name, "All")
 	end
 end)
