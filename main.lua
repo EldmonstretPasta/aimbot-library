@@ -3,16 +3,6 @@ local runservice = game:GetService("RunService")
 local mouse = game.Players.LocalPlayer:GetMouse()
 local camera = workspace.CurrentCamera
 
--- If you use this for your script please credit me :D
-
---_G.Enabled = true -- If this is enabled, the aimbot locks onto players
-
---_G.Aimbot = false -- Check to see if user is holding down mouse buttons
-
---_G.HitPart = "Head" -- Hitpart, basically where the aimbot locks
-
---_G.AimKey = Enum.UserInputType.MouseButton2
-
 function getClosestPlayer() -- Gets closest player using magnitude
 	local closestPlayer = nil
 	local closestDistance = math.huge
