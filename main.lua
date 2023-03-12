@@ -43,6 +43,16 @@ end)
 
 runservice.RenderStepped:Connect(function() -- Aimbot loop
 	if _G.Enabled == true and _G.Aimbot == true then
-		camera.CFrame = CFrame.new(camera.CFrame.Position, getClosestPlayer().Character[_G.HitPart].Position)
+		if getClosestPlayer().Character then
+			if getClosestPlayer().Name == game.Players.LocalPlayer.Name or getClosestPlayer().Character.Humanoid.Health < 1 then
+				return getClosestPlayer()
+			else
+				if getClosestPlayer().Team == game.Players.LocalPlayer.Team then
+					return true
+				else
+					camera.CFrame = CFrame.new(camera.CFrame.Position, getClosestPlayer().Character[_G.HitPart].Position)
+				end
+			end
+		end
 	end
 end)
